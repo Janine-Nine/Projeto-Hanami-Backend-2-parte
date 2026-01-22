@@ -1,0 +1,246 @@
+/* =========================
+   STYLE.CSS — Projeto Hanami
+   ========================= */
+
+/* ---------- Header ---------- */
+header {
+  background: linear-gradient(135deg, #d94f70, #f6c1cf);
+  color: #fff;
+  padding: 40px 16px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+header p {
+  opacity: 0.95;
+}
+
+/* ---------- Layout principal ---------- */
+main {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 16px;
+  display: grid;
+  gap: 24px;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  transition: box-shadow 0.25s ease;
+}
+
+.card:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+  margin-bottom: 16px;
+}
+
+/* ---------- Upload ---------- */
+#fileInput {
+  margin-bottom: 12px;
+}
+
+#uploadStatus {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+#progressContainer {
+  margin-top: 12px;
+  width: 100%;
+  height: 10px;
+  background: var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+#progressBar.active {
+  animation: progressPulse 1.2s infinite ease-in-out;
+}
+
+@keyframes progressPulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* ---------- KPIs ---------- */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.kpi {
+  background: #fdf2f8;
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kpi:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.kpi h3 {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.kpi span {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* ---------- Botões ---------- */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* ---------- Filtros ---------- */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---------- Gráficos ---------- */
+.chart-placeholder {
+  height: 260px;
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+}
+
+.chart-placeholder img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Insights ---------- */
+#insightsList li {
+  background: #f1f5f9;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+}
+
+#insightsList li::before {
+  content: "✔ ";
+  color: var(--success);
+  font-weight: bold;
+}
+
+/* ---------- Histórico ---------- */
+#uploadHistory li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ---------- Status / API ---------- */
+#apiStatus {
+  font-weight: bold;
+  color: var(--danger);
+}
+
+.api-online {
+  color: var(--success);
+}
+
+.api-offline {
+  color: var(--danger);
+}
+
+/* ---------- Log ---------- */
+#systemLog {
+  max-height: 180px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  padding: 20px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* FOOTER — igual ao header */
+footer {
+  background: linear-gradient(135deg, #d94f70, #f6c1cf);
+  color: #fff;
+  margin-top: 40px;
+  padding: 28px 16px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  opacity: 0.95;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  footer.site-footer {
+    padding: 20px 12px;
+  }
+}
